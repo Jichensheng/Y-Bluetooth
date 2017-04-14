@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TabView">
+        <attr name="tabPageIndicator" format="reference" />
+        <attr name="tabView" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="IconMenuItem">
+        <attr name="text_ico" format="string" />
+        <attr name="subText_ico" format="string" />
+        <attr name="imgsrc_ico" format="reference" />
+        <attr name="textColor_ico" format="reference|color" />
+        <attr name="subTextColor_ico" format="reference|color" />
+        <attr name="textSize_ico" format="dimension" />
+        <attr name="subTextSize_ico" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="AddOrSubView">
+        <attr name="as_offset" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ClickableListItem">
+        <attr name="text" format="string" />
+        <attr name="subText" format="string" />
+        <attr name="containIcon" format="boolean" />
+        <attr name="imgsrc" format="reference|color" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="subTextColor" format="reference|color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="subTextSize" format="dimension" />
+        <attr name="hasdivider" format="boolean" />
+        <attr name="clickable" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RippleView">
+        <attr name="rv_alpha" format="integer" />
+        <attr name="rv_framerate" format="integer" />
+        <attr name="rv_rippleDuration" format="integer" />
+        <attr name="rv_zoomDuration" format="integer" />
+        <attr name="rv_color" format="color" />
+        <attr name="rv_centered" format="boolean" />
+        <attr name="rv_type" format="enum">
+            <enum name="simpleRipple" value="0" />
+            <enum name="doubleRipple" value="1" />
+            <enum name="rectangle" value="2" />
+        </attr>
+        <attr name="rv_ripplePadding" format="dimension" />
+        <attr name="rv_zoom" format="boolean" />
+        <attr name="rv_zoomScale" format="float" />
+    </declare-styleable>
+</resources>

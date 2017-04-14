@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Y-modem(v1.0)</string>
+    <string name="sdcard_removed">存储卡已移除</string>
+    <string name="sdcard_checking">正在检测存储卡，请稍候再试</string>
+    <string name="sdcard_unmounted">存储卡未挂载</string>
+</resources>

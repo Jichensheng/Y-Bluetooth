@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/common_tv_minor">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/cb_all"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:button="@drawable/selector_checkbox"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="全选"
+            android:textColor="#d96160"
+        />
+        <LinearLayout
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/common_tv_minor">
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imv_del"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:src="@drawable/list_del"
+        />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BezierTextView">
+        <attr name="bezier_text" format="string"/>
+        <attr name="max_rebounce" format="integer"/>
+    </declare-styleable>
+</resources>

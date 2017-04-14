@@ -1,0 +1,141 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+
+        <!-- actionbarsize -->
+        <item name="android:actionBarSize">46dip</item>
+        <!-- option -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Actionbar color -->
+        <item name="colorPrimary">@color/accent_material_dark</item>
+        <!-- 顶部状态栏颜色 -->
+        <item name="colorPrimaryDark">#0094b0</item>
+        <!-- Window color -->
+        <item name="tabView">@style/TabView</item>
+        <item name="tabPageIndicator">@style/TabIndicator</item>
+        <item name="vpiTabPageIndicatorStyle">@style/TabPageIndicator</item>
+        <item name="android:radioButtonStyle">@style/RadioSunny</item>
+        <item name="android:textViewStyle">@style/TextViewSunny</item>
+        <item name="android:editTextBackground">@drawable/text_bg</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowAnimationStyle">@style/heshunAnimStyle</item>
+        <item name="android:listDivider">@drawable/list_divider</item>
+    </style>
+
+    <style name="heshunAnimStyle">
+        <item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/push_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/push_right_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_right_out</item>
+    </style>
+
+    <style name="Animation.Activity.Translucent.Style" parent="@android:style/Animation.Translucent">
+        <item name="android:windowEnterAnimation">@anim/push_left_in</item>
+        <item name="android:windowExitAnimation">@anim/push_left_out</item>
+    </style>
+
+    <style name="TabIndicator" />
+
+    <style name="TabView">
+        <item name="android:addStatesFromChildren">true</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="TextViewSunny">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="RadioSunny">
+        <item name="android:button">@drawable/radio_sunny</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/common_tv_title</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+
+    <style name="order_finish_tv">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/title_text_gray</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="list_tv_title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/title_text_gray</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="list_tv_subtitle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/subtitle_text_gray</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="list_tv_attr">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/subtitle_text_gray</item>
+    </style>
+
+    <style name="common_tv_title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/common_tv_title</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="RatingStyle" parent="@android:style/Widget.RatingBar">
+
+        <!-- 定义星星图片 -->
+        <item name="android:progressDrawable">@drawable/rating_bar</item>
+        <!-- 根据自定义星星图片的大小,设置相应的值,否则可能显示不全 -->
+        <item name="android:minHeight">21dp</item>
+    </style>
+
+    <style name="common_tv_remark">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/common_tv_remark</item>
+    </style>
+
+    <style name="common_tv_minor">
+        <item name="android:textSize">12sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/common_tv_minor</item>
+    </style>
+
+    <style name="TabPageIndicator">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingLeft">12dip</item>
+        <item name="android:paddingRight">12dip</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:divider">@drawable/divider</item>
+        <item name="android:textAppearance">@style/TabPageIndicator_TextAppearance</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@drawable/tab_textcolor</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TabPageIndicator_TextAppearance">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/title_text_gray</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+</resources>

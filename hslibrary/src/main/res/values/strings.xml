@@ -1,0 +1,20 @@
+<resources>
+    <!--<string name="app_name">HsLibrary</string>-->
+    <string name="default_toolbar_name">Toolbar</string>
+    <string name="default_dialog_name">Dialog</string>
+    <string name="done">确定</string>
+    <string name="cancel">取消</string>
+
+    <string name="content_is_null">内容为空</string>
+    <string name="json_parse_ex">数据解析错误</string>
+
+    <string name="neterror">网络不太给力</string>
+    <string name="netunavaible">网络不可用，请检查网络</string>
+
+    <string name="sdcard_removed">存储卡已移除</string>
+    <string name="sdcard_checking">正在检测存储卡，请稍候再试</string>
+    <string name="sdcard_unmounted">存储卡未挂载</string>
+
+    <string name="partial_delete_failure">部分文件删除失败</string>
+
+</resources>

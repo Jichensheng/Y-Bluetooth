@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.heshun.tablayou.MainActivity">
+    <!--    <com.heshun.tablayou.IconView android:layout_width="match_parent"
+                                      android:layout_height="match_parent"/>-->
+    <!--  <LinearLayout
+          android:id="@+id/parent"
+          android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:addStatesFromChildren="true"
+      android:orientation="vertical"
+      >
+
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:drawableBottom="@drawable/img_se"
+          />
+          <ImageView
+              android:id="@+id/iv"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:src="@drawable/img_se"
+          />
+      </LinearLayout>
+  -->
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    />
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_se"
+    />
+    <!--<com.heshun.tablayou.SelectView android:layout_width="match_parent"
+                                    android:layout_height="match_parent"></com.heshun.tablayou.SelectView>-->
+</LinearLayout>

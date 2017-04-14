@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/view_empty"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center"
+             android:orientation="vertical"
+             android:padding="16dip" >
+
+    <TextView
+        android:id="@+id/text_message"
+        style="@style/common_tv_remark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawablePadding="8dp"
+        android:drawableTop="@drawable/icon_error"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="暂无数据"
+        android:textSize="16sp" >
+    </TextView>
+</LinearLayout>
