@@ -48,6 +48,8 @@ import com.heshun.ble.YModem.Ymodem;
 import com.heshun.ble.adapter.EPAdapter;
 import com.heshun.ble.entity.ElectricityParameter;
 import com.heshun.ble.tools.FileUtils;
+import com.heshun.ble.wheel.GetCurrentTime;
+import com.heshun.ble.wheel.GetTime;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -88,6 +90,8 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 	private Button btn_start;
 	private Button btn_stop;
 	private Button btn_send;
+	private Button btn_make_time;
+	private Button btn_set_time;
 	private boolean dataNeedAdd = false;
 	// 蓝牙服务的ServiceConnection
 	private final ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -145,13 +149,18 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 		btn_start = (Button) findViewById(R.id.btn_start);
 		btn_stop = (Button) findViewById(R.id.btn_stop);
 		btn_send = (Button) findViewById(R.id.btn_send);
+		btn_make_time = (Button) findViewById(R.id.btn_make_time);
+		btn_set_time = (Button) findViewById(R.id.btn_set_time);
 		tv_filepath = (TextView) findViewById(R.id.tv_filepath);
+
 		btn_get.setOnClickListener(this);
 		btn_add.setOnClickListener(this);
 		btn_sub.setOnClickListener(this);
 		btn_start.setOnClickListener(this);
 		btn_stop.setOnClickListener(this);
 		btn_send.setOnClickListener(this);
+		btn_make_time.setOnClickListener(this);
+		btn_set_time.setOnClickListener(this);
 	}
 
 	private final BroadcastReceiver mGattUpdateReceiver = new BroadcastReceiver() {
@@ -495,6 +504,77 @@ public class DeviceControlActivity extends Activity implements View.OnClickListe
 				break;
 			case R.id.btn_stop:
 				writeData(mCharacteristic, "+STOP");
+				break;
+			case R.id.btn_make_time:
+				new GetTime(this) {
+					@Override
+					public void getTimeString(final String sb) {
+
+						new Thread(new Runnable() {
+							@Override
+							public void run() {
+								int i=0;
+								String commendSet="+ALARM"+sb;
+								String[] array = commendSet.split(" ");
+								while(i< array.length){
+									if(i==1){
+										mCharacteristic.setValue(" "+array[i]);
+									}else
+										mCharacteristic.setValue(array[i++]);
+
+									if(!mBluetoothLeService.writeCharacteristic(mCharacteristic)){
+										i--;
+									}
+								}
+							}
+						}).start();
+						/*
+						runOnUiThread(new Runnable() {
+							@Override
+							public void run() {
+								String commendSet="+ALARM"+sb;
+//								Toast.makeText(DeviceControlActivity.this, commendSet, Toast.LENGTH_SHORT).show();
+								writeData(mCharacteristic,commendSet);
+								String[] array=commendSet.split(" ");
+
+								for (int i = 0; i < array.length; i++) {
+									if (i==array.length-1){
+										writeData(mCharacteristic, " "+array[i]);
+//										Toast.makeText(DeviceControlActivity.this, "空"+array[i], Toast.LENGTH_SHORT).show();
+									}else
+										writeData(mCharacteristic,array[i]);
+//										Toast.makeText(DeviceControlActivity.this, array[i], Toast.LENGTH_SHORT).show();
+								}
+							}
+						});*/
+					}
+				}.makeDailag();
+				break;
+			case R.id.btn_set_time:
+				new Thread(new Runnable() {
+					@Override
+					public void run() {
+						int i=0;
+						String commendSet="+TIME"+new GetCurrentTime().getTime();
+						String[] array = commendSet.split(" ");
+						while(i< array.length){
+							if(i==1){
+								mCharacteristic.setValue(" "+array[i]);
+							}else
+								mCharacteristic.setValue(array[i++]);
+							if(!mBluetoothLeService.writeCharacteristic(mCharacteristic)){
+								i--;
+							}
+						}
+					}
+				}).start();
+				/*runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						String commendSet="+TIME"+new GetCurrentTime().getTime();
+						writeData(mCharacteristic,commendSet);
+					}
+				});*/
 				break;
 			case R.id.btn_send://发文件
 				if (tv_filepath.getText().length() <= 0) {

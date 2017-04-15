@@ -16,6 +16,7 @@
 <resources>
     <string name="ble_not_supported">不支持BLE</string>
     <string name="label_data">数据：</string>
+    <string name="hello">Hello World, MainActivity!</string>
     <string name="label_device_address">设备地址：</string>
     <string name="label_state">状态：</string>
     <string name="no_data">没数据</string>
